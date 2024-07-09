@@ -20,7 +20,11 @@
     "noEmit": false,
     "jsx": "react-jsx",
     "strictNullChecks": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "paths": {
+	    "@/*": ["./src/*"],
+    }
   },
 
   "ts-node": {
@@ -30,6 +34,7 @@
   },
   
   "include": [
+    "config",
     "src",
     "global.d.ts"  
   ],

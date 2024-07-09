@@ -8,7 +8,7 @@ export function buildPlugins({mode, paths}: BuildOptions): Configuration['plugin
   const isProd = mode === 'production';
 
   const plugins: Configuration['plugins'] = [
-    new HtmlWebpackPlugin({ template: paths.html }),
+    new HtmlWebpackPlugin({ template: paths.html, favicon: paths.favicon}),
   ]
 
   if(isDev) {

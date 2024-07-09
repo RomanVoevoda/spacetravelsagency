@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import classes from './App.module.scss';
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className={classes.App}>Appp</div>
   );
 };
 

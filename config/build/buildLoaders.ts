@@ -6,7 +6,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   const isDev = options.mode === 'development';
 
   const cssLoaderWithModules = {
-    loader: "css-loader",
+    loader: 'css-loader',
     options: {
       modules: {
         localIdentName: '[hash:base64:8]',  
@@ -18,8 +18,15 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     test: /\.s[ac]ss$/i,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 
-      isDev ? "css-loader" : cssLoaderWithModules, 
-      "sass-loader"
+      isDev ? 'css-loader' : cssLoaderWithModules, 
+      {
+        loader: 'sass-loader',
+        options: {
+          additionalData: `
+            @import "./src/app/styles/vars.scss";
+          `
+        }
+      }
     ],
   }
 

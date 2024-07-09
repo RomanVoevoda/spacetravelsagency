@@ -1,7 +1,9 @@
 export interface BuildPaths {
   entry: string;
   html: string;
+  favicon: string;
   output: string;
+  src: string;
 }
 
 export type BuildMode = 'production' | 'development';

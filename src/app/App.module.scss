@@ -1,0 +1,11 @@
+.App {
+  font-family: "MartianMono";
+  font-size: $bigger-font-size;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

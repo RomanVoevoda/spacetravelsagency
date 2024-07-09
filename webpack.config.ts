@@ -11,7 +11,9 @@ export default (env: EnvVariables) => {
   const paths: BuildPaths = {
     output: 'C:/Users/Voevodich/Desktop/spacetravelsagency/build',
     entry: './src/index.tsx',
-    html: 'public/index.html'
+    html: 'public/index.html',
+    favicon: './public/favicon/favicon.ico',
+    src: 'C:/Users/Voevodich/Desktop/spacetravelsagency/src'
   }
 
   const config: webpack.Configuration = buildWebpack({
