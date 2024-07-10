@@ -1,0 +1,1 @@
+export { default as HotTours } from './ui/HotTours';
