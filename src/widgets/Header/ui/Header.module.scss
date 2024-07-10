@@ -1,0 +1,17 @@
+.header {
+  height: 5rem;
+  width: 100%;
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  &__paragraph {
+    margin: 1rem 0;
+    font-size: $normal-font-size;
+    font-family: RubikMono;
+    text-align: center;
+    user-select: none;
+  }
+}

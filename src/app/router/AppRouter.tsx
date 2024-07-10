@@ -12,7 +12,6 @@ interface route {
 const AppRouter: FC = () => {
   return (
     <BrowserRouter>
-      <Navbar></Navbar>
       <Routes>
         {routes.map(route => 
           <Route 

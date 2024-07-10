@@ -1,0 +1,45 @@
+.footer {
+  height: 5rem;
+  width: 100%;
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  user-select: none;
+
+  &__icon {
+    margin: 0.5rem 1rem;
+    width: 4rem;
+    height: 4rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  }
+
+  &__container {
+    display: flex;
+    margin-right: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: $extra-small-font-size;
+  }
+
+  &__paragraph {
+    width: 100%;
+    text-align: end;
+    padding-bottom: 0.5rem;
+  }
+
+  &__link {
+    user-select: all;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

@@ -1,8 +1,13 @@
+import { Footer, Header, Navbar } from '@/widgets'
 import React, { FC } from 'react'
 
 const Main: FC = () => {
   return (
-    <div>Main</div>
+    <div>
+      <Header />
+      <Navbar />
+      <Footer />
+    </div>
   )
 }
 
