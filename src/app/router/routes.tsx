@@ -1,6 +1,6 @@
 import { Main, NewTours, HotTours, PriceCalculator, About } from "@/pages";
-import React, { FC, ReactNode } from "react";
-import { Navigate, NavigateFunction } from "react-router-dom";
+import { ReactNode } from "react";
+import { Navigate } from "react-router-dom";
 
 type route = {
   path: string,

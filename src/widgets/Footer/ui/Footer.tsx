@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import classes from './Footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -33,7 +33,7 @@ const Footer: FC = () => {
         </div>
       </ReversibleDiv>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

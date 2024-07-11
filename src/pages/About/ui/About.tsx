@@ -1,9 +1,10 @@
 import { Footer, Header, Navbar } from '@/widgets';
-import React, { FC } from 'react';
+import { FC } from 'react';
+import classes from './About.module.scss';
 
 const About: FC = () => {
   return (
-    <div>
+    <div className={classes.about}>
       <Header />
       <Navbar />
       <Footer />

@@ -6,7 +6,10 @@
   display: flex;
   justify-content: flex-start;
   align-content: center;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 
   &__icon {
     color: var(--icons-color);
@@ -39,7 +42,10 @@
   }
 
   &__link {
-    user-select: all;
+    -webkit-user-select: all;
+       -moz-user-select: all;
+        -ms-user-select: all;
+            user-select: all;
 
     &:hover{
       cursor: pointer;

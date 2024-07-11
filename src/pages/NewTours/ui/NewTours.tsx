@@ -1,9 +1,10 @@
 import { Footer, Header, Navbar } from '@/widgets'
-import React, { FC } from 'react'
+import { FC } from 'react'
+import classes from './NewTours.module.scss';
 
 const NewTours: FC = () => {
   return (
-    <div>
+    <div className={classes.newtours}>
       <Header />
       <Navbar />
       <Footer />

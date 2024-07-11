@@ -1,9 +1,10 @@
 import { Footer, Header, Navbar } from '@/widgets';
-import React, { FC } from 'react';
+import { FC } from 'react';
+import classes from './PriceCalculator.module.scss';
 
 const PriceCalculator: FC = () => {
   return (
-    <div>
+    <div className={classes.calculator}>
       <Header />
       <Navbar />
       <Footer />

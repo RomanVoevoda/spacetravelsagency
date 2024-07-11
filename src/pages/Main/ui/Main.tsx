@@ -1,9 +1,10 @@
 import { Footer, Header, Navbar } from '@/widgets'
-import React, { FC } from 'react'
+import { FC } from 'react'
+import classes from './Main.module.scss';
 
 const Main: FC = () => {
   return (
-    <div>
+    <div className={classes.main}>
       <Header />
       <Navbar />
       <Footer />
