@@ -8,4 +8,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-image: linear-gradient(
+    180deg, 
+    var(--main-background-color) 0%, 
+    var(--secondary-background-color) 60%, 
+    var(--third-background-color) 100%
+  );
 }

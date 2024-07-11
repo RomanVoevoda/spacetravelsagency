@@ -23,7 +23,7 @@ const Footer: FC = () => {
 
       <ReversibleDiv type={'row'}>
         <div className={classes.footer__container}>
-          <p>Связаться с нами:</p>
+          <p className={classes.footer__paragraph}>Связаться с нами:</p>
           <a 
             href={'mailto:karamount22@gmail.com'}
             className={classes.footer__link}

@@ -1,0 +1,19 @@
+.dark {
+  --main-background-color: rgba(20,16,16,1);
+  --secondary-background-color: rgba(34,40,49,1);
+  --third-background-color: rgba(34,49,63,1);
+  --main-font-color: rgba(247, 247, 247, 1);
+  --secondary-font-color: rgba(236, 236, 236, 1);
+  --icons-color: rgba(67, 15, 88, 1);
+  --icons-color-hover: rgba(67, 15, 88, 0.8);
+}
+
+.light {
+  --main-background-color: rgba(0, 86, 137, 1);
+  --secondary-background-color: mix(rgba(0, 86, 137, 1), rgba(0, 124, 185, 1), 60%);
+  --third-background-color: rgba(0, 124, 185, 1);
+  --main-font-color: rgba(0, 86, 137, 1);
+  --secondary-font-color: rgba(236, 236, 236, 1);
+  --icons-color: rgba(67, 15, 88, 1);
+  --icons-color-hover: rgba(67, 15, 88, 0.8);
+}
