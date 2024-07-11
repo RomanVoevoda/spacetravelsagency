@@ -1,0 +1,52 @@
+.themeSwitcher {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 0.8rem;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-color: var(--border-color);
+  background-color: var(--icons-color-hover);
+  box-shadow: 0 0 0.2rem 0 var(--border-color) inset;
+  z-index: 10;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__container {
+    position: relative;
+    top: -0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: var(--icons-color);
+    transition: transform 0.3s ease;
+
+    &_light {
+      @extend .themeSwitcher__container;
+      transform: translateX(1.5rem);
+    }
+
+    &_dark {
+      @extend .themeSwitcher__container;
+      transform: translateX(-1.5rem);
+    }
+  }
+
+  &__icon {
+    color: var(--icons-color);
+    width: 1.8rem;
+    height: 1.8rem;
+    
+    &:hover {
+      color: var(--secondary-font-color);
+    }
+  }
+}
