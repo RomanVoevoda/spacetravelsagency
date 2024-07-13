@@ -10,18 +10,28 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-
+ 
   &__icon {
     color: var(--button-color);
     margin: 0.5rem 1rem;
     width: 4rem;
     height: 4rem;
     transition: transform 0.3s ease;
+    
+    @media (hover: hover) {
+      &:hover {
+        color: var(--button-color-hover);
+        cursor: pointer;
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+    }
 
-    &:hover {
-      color: var(--button-color-hover);
-      cursor: pointer;
-      transform: scale3d(1.05, 1.05, 1.05);
+    @media (hover: none) {
+      &:active {
+        color: var(--button-color-hover);
+        cursor: pointer;
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
     }
   }
 
@@ -47,8 +57,10 @@
         -ms-user-select: all;
             user-select: all;
 
-    &:hover{
-      cursor: pointer;
+    @media (hover: hover) {
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 }

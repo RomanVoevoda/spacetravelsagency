@@ -11,14 +11,14 @@ const Footer: FC = () => {
         target={'_blank'} 
         href={'https://vk.com/romanvoevoda'}
       >
-        <FontAwesomeIcon icon={fab.faVk} className={classes.footer__icon} />
+        <FontAwesomeIcon icon={fab.faVk} className={classes.footer__icon} title={'Ссылка на группу ВК'}/>
       </a>
 
       <a 
         target={'_blank'} 
         href={'https://github.com/RomanVoevoda/spacetravelsagency'}
       >
-        <FontAwesomeIcon icon={fab.faSquareGithub} className={classes.footer__icon} />
+        <FontAwesomeIcon icon={fab.faSquareGithub} className={classes.footer__icon} title={'Ссылка на ГитХаб'}/>
       </a>
 
       <ReversibleDiv type={'row'}>
@@ -27,6 +27,7 @@ const Footer: FC = () => {
           <a 
             href={'mailto:karamount22@gmail.com'}
             className={classes.footer__link}
+            title={'Отправить нам письмо'}
           >
             karamount22@gmail.com
           </a>
