@@ -12,14 +12,14 @@
           user-select: none;
 
   &__icon {
-    color: var(--icons-color);
+    color: var(--button-color);
     margin: 0.5rem 1rem;
     width: 4rem;
     height: 4rem;
     transition: transform 0.3s ease;
 
     &:hover {
-      color: var(--icons-color-hover);
+      color: var(--button-color-hover);
       cursor: pointer;
       transform: scale3d(1.05, 1.05, 1.05);
     }

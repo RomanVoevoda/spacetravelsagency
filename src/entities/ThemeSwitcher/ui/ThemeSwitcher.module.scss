@@ -8,7 +8,7 @@
   border-width: 0.2rem;
   border-style: solid;
   border-color: var(--border-color);
-  background-color: var(--icons-color-hover);
+  background-color: var(--button-color-hover);
   box-shadow: 0 0 0.2rem 0 var(--border-color) inset;
   z-index: 10;
   outline: none;
@@ -26,7 +26,7 @@
     border-radius: 50%;
     height: 2.5rem;
     width: 2.5rem;
-    background-color: var(--icons-color);
+    background-color: var(--button-color);
     transition: transform 0.3s ease;
 
     &_light {
@@ -41,12 +41,12 @@
   }
 
   &__icon {
-    color: var(--icons-color);
+    color: var(--button-font-color);
     width: 1.8rem;
     height: 1.8rem;
     
     &:hover {
-      color: var(--secondary-font-color);
+      color: var(--button-font-color-hover);
     }
   }
 }

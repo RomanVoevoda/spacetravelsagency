@@ -3,18 +3,29 @@
   --secondary-background-color: rgba(34,40,49,1);
   --third-background-color: rgba(34,49,63,1);
   --main-font-color: rgba(247, 247, 247, 1);
+  --main-font-color-hover: rgba(247, 247, 247, 0.8);
   --secondary-font-color: rgba(236, 236, 236, 1);
-  --icons-color: rgba(67, 15, 88, 1);
-  --icons-color-hover: rgba(67, 15, 88, 0.8);
+  --secondary-font-color-hover: rgba(236, 236, 236, 0.8);
+  --button-font-color: rgba(42, 54, 59, 1);
+  --button-font-color-hover: rgba(42, 54, 59, 0.8);
+  --button-color: rgba(252, 244, 217, 1);
+  --button-color-hover: rgba(252, 244, 217, 0.8);
   --border-color: rgba(57, 62, 70, 1);
+  --border-color-hover: rgba(57, 62, 70, 0.8);
 }
 
 .light {
-  --main-background-color: rgba(0, 86, 137, 1);
-  --secondary-background-color: mix(rgba(0, 86, 137, 1), rgba(0, 124, 185, 1), 60%);
-  --third-background-color: rgba(0, 124, 185, 1);
-  --main-font-color: rgba(0, 86, 137, 1);
-  --secondary-font-color: rgba(236, 236, 236, 1);
-  --icons-color: rgba(250, 207, 90, 1);
-  --icons-color-hover: rgba(250, 207, 90, 0.8);
+  --main-background-color:  rgba(240, 236, 226, 1);
+  --secondary-background-color: rgba(223, 211, 195, 1);
+  --third-background-color: rgba(199, 177, 152, 1);
+  --main-font-color: rgba(29, 23, 22, 1);
+  --main-font-color-hover: rgba(29, 23, 22, 0.8);
+  --secondary-font-color: rgba(44, 45, 52, 1);
+  --secondary-font-color-hover: rgba(44, 45, 52, 0.8);
+  --button-font-color: rgba(240, 242, 235, 1);
+  --button-font-color-hover: rgba(240, 242, 235, 0.8);
+  --button-color: rgba(37, 22, 27, 1);
+  --button-color-hover: rgba(37, 22, 27, 0.8);
+  --border-color: rgba(57, 62, 70, 1);
+  --border-color-hover: rgba(57, 62, 70, 0.8);
 }
