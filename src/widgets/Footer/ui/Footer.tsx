@@ -2,7 +2,7 @@ import { FC } from 'react';
 import classes from './Footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { ReversibleDiv } from '@/shared/ui';
+import { FlexDiv } from '@/shared/ui';
 
 const Footer: FC = () => {
   return (
@@ -21,7 +21,7 @@ const Footer: FC = () => {
         <FontAwesomeIcon icon={fab.faSquareGithub} className={classes.footer__icon} title={'Ссылка на ГитХаб'}/>
       </a>
 
-      <ReversibleDiv type={'row'}>
+      <FlexDiv direction='row_reverse'>
         <div className={classes.footer__container}>
           <p className={classes.footer__paragraph}>Связаться с нами:</p>
           <a 
@@ -32,7 +32,7 @@ const Footer: FC = () => {
             karamount22@gmail.com
           </a>
         </div>
-      </ReversibleDiv>
+      </FlexDiv>
     </footer>
   );
 };

@@ -1,1 +1,1 @@
-export { default as ReversibleDiv } from './ReversibleDiv';
+export { default as FlexDiv } from './FlexDiv';
