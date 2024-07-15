@@ -2,11 +2,17 @@
   position: relative;
   height: 5rem;
   width: 100%;
-  position: relative;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  &__container {
+    padding: 0 2rem 0 1rem;
+    width: calc(100% - 3rem);
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__paragraph {
     position: absolute;
@@ -21,14 +27,30 @@
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+
+    @media screen and (width < 600px) {
+      position: relative;
+      text-align: end;
+      font-size: $extra-small-font-size;
+    }
   }
 
-  &__container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-right: 2rem;
+  &__icon {
+    color: var(--button-color);
+    padding-right: 1.5rem;
+    font-size: $normal-font-size;
+
+    @media(hover:hover) {
+      &:hover {
+        cursor: pointer;
+        color: var(--button-color-hover);
+      }
+    }
+
+    @media(hover:none) {
+      &:active {
+        color: var(--button-color-hover);
+      }
+    }
   }
 }
