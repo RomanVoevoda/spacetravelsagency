@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FlexDiv } from '@/shared/ui';
 
-const Header: FC = () => {
+interface HeaderProps {
+  openNavbar: (value: 'open' | 'closed') => void;
+}
+
+const Header: FC<HeaderProps> = ({openNavbar}) => {
   return (
     window.innerWidth < 600
 
@@ -14,7 +18,11 @@ const Header: FC = () => {
     <header className={classes.header}>
       <div className={classes.header__container}>
         <FlexDiv align='center'>
-          <FontAwesomeIcon icon={faBars} className={classes.header__icon}/>
+          <FontAwesomeIcon 
+            icon={faBars} 
+            className={classes.header__icon}
+            onClick={() => openNavbar("open")}
+          />
 
           <ThemeSwitcher />
 
