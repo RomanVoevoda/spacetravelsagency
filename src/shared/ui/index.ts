@@ -1,1 +1,1 @@
-export { FlexDiv }  from './ReversibleDiv';
+export { FlexDiv }  from './FlexDiv';

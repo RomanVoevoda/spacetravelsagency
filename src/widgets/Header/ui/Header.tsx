@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import classes from './Header.module.scss';
 import { ThemeSwitcher } from '@/entities';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,37 +16,33 @@ const Header: FC<HeaderProps> = ({openNavbar}) => {
     ?
 
     <header className={classes.header}>
-      <div className={classes.header__container}>
-        <FlexDiv align='center'>
-          <FontAwesomeIcon 
-            icon={faBars} 
-            className={classes.header__icon}
-            onClick={() => openNavbar("open")}
-          />
+      <FlexDiv align='center'>
+        <FontAwesomeIcon 
+          icon={faBars} 
+          className={classes.header__icon}
+          onClick={() => openNavbar("open")}
+        />
 
-          <ThemeSwitcher />
+        <ThemeSwitcher />
 
-          <FlexDiv align='center' justify='end'>
-            <p className={classes.header__paragraph}>
-              Space Travels Agency
-            </p>
-          </FlexDiv>
+        <FlexDiv align='center' justify='end'>
+          <p className={classes.header__paragraph}>
+             Space Travels Agency
+          </p>
         </FlexDiv>
-      </div>
+      </FlexDiv>
     </header>
 
     :
 
     <header className={classes.header}>
-      <div className={classes.header__container}>
-        <p className={classes.header__paragraph}>
-          Space Travels Agency
-        </p>
+      <p className={classes.header__paragraph}>
+        Space Travels Agency
+      </p>
 
-        <FlexDiv justify='end' align='center'>
-          <ThemeSwitcher />
-        </FlexDiv>
-      </div>
+      <FlexDiv justify='end' align='center'>
+        <ThemeSwitcher />
+      </FlexDiv>
     </header>
   );
 };
