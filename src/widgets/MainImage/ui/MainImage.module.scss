@@ -1,0 +1,41 @@
+.mainImage {
+  width: 90%;
+  height: 10rem;
+  position: relative;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: var(--border-color);
+  //Переменные цветов частично не используются, ибо изображение всегда будет тёмным
+  box-shadow: 0 0 2rem 0 rgba(0,0,0,0.75) inset;
+  
+
+  &__image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__paragraph {
+    z-index: 10;
+    position: absolute;
+    bottom: 5%;
+    right: 1rem;
+    width: 100%; 
+    text-align: end;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-style: italic;
+    font-size: $smallest-font-size;
+    color: rgba(252, 244, 217, 1);
+    text-decoration: underline;
+    -webkit-text-decoration-color: rgba(252, 244, 217, 1);
+            text-decoration-color: rgba(252, 244, 217, 1);
+    text-decoration-thickness: 0.2rem;
+  }
+}
