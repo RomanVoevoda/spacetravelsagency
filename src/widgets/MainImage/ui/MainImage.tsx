@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { fetchMainImage } from '../api/fetchMainImage';
 import { apiKey } from '@/shared/api';
 import classes from './MainImage.module.scss';
 import { MainImageData } from '../types/types';
+import { GalleryImage } from '@/entities';
 
-const MainImage = () => {
+const MainImage: FC = () => {
   const [data, setData] = useState<MainImageData | undefined>(undefined);
 
   useEffect( () => {
@@ -13,7 +14,7 @@ const MainImage = () => {
   
   return (
     <div className={classes.mainImage}>
-      <img 
+      <GalleryImage
         src={
           (data) 
           ? 
@@ -22,13 +23,8 @@ const MainImage = () => {
           'ошибка загрузки изображения'
         }
         alt={'Изображение дня'}
-        className={classes.mainImage__image}
-      >
-        
-      </img>
-      <p className={classes.mainImage__paragraph}>
-        {(data) ? data.title : 'Ошибка загрузки'}
-      </p>
+        title={(data) ? data.title : 'Ошибка загрузки'}
+      />
     </div>
   );
 };

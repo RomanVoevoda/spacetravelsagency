@@ -1,4 +1,4 @@
-import { Main, NewTours, HotTours, PriceCalculator, About } from "@/pages";
+import { Main, Mars, HotTours, PriceCalculator, About } from "@/pages";
 import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 import { Layout } from "../Layout";
@@ -17,10 +17,10 @@ export const routes: route[]  = [
       </Layout>
   },
   {
-    path: '/newtours', 
+    path: '/mars', 
     element: 
       <Layout>
-        <NewTours />
+        <Mars />
       </Layout>
   },
   {

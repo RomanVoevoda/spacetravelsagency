@@ -1,7 +1,7 @@
 import { Footer, Header, Navbar } from '@/widgets';
 import { FC, ReactNode, useState } from 'react';
 import classes from './Layout.module.scss';
-import MainImage from '@/widgets/MainImage/ui/MainImage';
+import { MainImage } from '@/widgets';
 
 interface LayoutProps {
   children?: ReactNode;

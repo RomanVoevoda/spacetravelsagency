@@ -1,5 +1,5 @@
 export { Main } from './Main';
-export { NewTours } from './NewTours';
+export { Mars } from './Mars';
 export { HotTours } from './HotTours';
 export { PriceCalculator } from './PriceCalculator';
 export { About } from './About';

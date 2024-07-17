@@ -1,0 +1,1 @@
+export { default as MainImage } from './ui/MainImage';

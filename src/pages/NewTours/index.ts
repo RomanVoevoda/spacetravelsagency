@@ -1,1 +1,0 @@
-export { default as NewTours } from './ui/NewTours';
