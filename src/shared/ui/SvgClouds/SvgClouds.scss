@@ -1,0 +1,74 @@
+.clouds {
+  position: absolute;
+  bottom: -1%;
+  fill: var(--clouds-color); 
+  width: 115%; 
+  height: 4.5rem; 
+  z-index: 10;
+  transform: rotate(180deg) skewX(5deg);
+
+  &_left {
+    left: -30%;
+    -webkit-animation: waving-to-right 20s ease infinite;
+    animation: waving-to-right 20s ease infinite;
+
+    @-webkit-keyframes waving-to-left{
+      0%{transform: rotate(180deg) skewX(0deg)}
+      25%{transform: rotate(180deg) skewX(-25deg)}
+      50%{transform: rotate(180deg) skewX(-30deg)}
+      75%{transform: rotate(180deg) skewX(-25deg)}
+      100%{transform: rotate(180deg) skewX(0deg)}
+    }
+    
+    @keyframes waving-to-left{
+      0%{transform: rotate(180deg) skewX(0deg)}
+      25%{transform: rotate(180deg) skewX(-25deg)}
+      50%{transform: rotate(180deg) skewX(-30deg)}
+      75%{transform: rotate(180deg) skewX(-25deg)}
+      100%{transform: rotate(180deg) skewX(0deg)}
+    }
+  }
+
+  &_right {
+    right: -30%;
+    -webkit-animation: waving-to-left 20s ease infinite;
+    animation: waving-to-left 20s ease infinite;
+
+    @-webkit-keyframes waving-to-right{
+      0%{transform: rotate(180deg) skewX(0deg)}
+      25%{transform: rotate(180deg) skewX(25deg)}
+      50%{transform: rotate(180deg) skewX(30deg)}
+      75%{transform: rotate(180deg) skewX(25deg)}
+      100%{transform: rotate(180deg) skewX(0deg)}
+    }
+    
+    @keyframes waving-to-right{
+      0%{transform: rotate(180deg) skewX(0deg)}
+      25%{transform: rotate(180deg) skewX(25deg)}
+      50%{transform: rotate(180deg) skewX(30deg)}
+      75%{transform: rotate(180deg) skewX(25deg)}
+      100%{transform: rotate(180deg) skewX(0deg)}
+    }
+  }
+
+  &_center {
+    -webkit-animation: waving 20s ease infinite;
+    animation: waving 20s ease infinite;
+
+    @-webkit-keyframes waving{
+      0%{transform: rotate(180deg) skewX(0deg)}
+      25%{transform: rotate(180deg) skewX(25deg)}
+      50%{transform: rotate(180deg) skewX(0deg)}
+      75%{transform: rotate(180deg) skewX(-25deg)}
+      100%{transform: rotate(180deg) skewX(0deg)}
+    }
+    
+    @keyframes waving{
+      0%{transform: rotate(180deg) skewX(0deg)}
+      25%{transform: rotate(180deg) skewX(25deg)}
+      50%{transform: rotate(180deg) skewX(0deg)}
+      75%{transform: rotate(180deg) skewX(-25deg)}
+      100%{transform: rotate(180deg) skewX(0deg)}
+    }
+  }
+}

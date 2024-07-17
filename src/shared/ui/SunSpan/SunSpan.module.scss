@@ -1,0 +1,33 @@
+.sun {
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
+  left: -7rem;
+  bottom: -7rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(252,101,70,0.5) 0%, rgba(252,101,70,0.6) 100%);
+  box-shadow: 0 0 10rem 0 rgba(252,101,70,0.3);
+  -webkit-animation: sun 1000s linear infinite;
+  animation: sun 1000s linear infinite;
+  
+  @-webkit-keyframes sun{
+    0%{transform: translateX(0) translateY(0)}
+    25%{transform: translateX(14rem) translateY(4rem)}
+    40%{transform: translateX(30rem) translateY(20rem)}
+    50%{transform: translateX(-14rem) translateY(20rem)}
+    75%{transform: translateX(-14rem) translateY(4rem)}
+    100%{transform: translateX(0) translateY(0)}
+  }
+
+  @keyframes sun{
+    0%{transform: translateX(0) translateY(0)}
+    25%{transform: translateX(14rem) translateY(4rem)}
+    40%{transform: translateX(30rem) translateY(20rem)}
+    50%{transform: translateX(-14rem) translateY(20rem)}
+    75%{transform: translateX(-14rem) translateY(4rem)}
+    100%{transform: translateX(0) translateY(0)}
+  }
+}
+
+
+
