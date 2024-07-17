@@ -11,30 +11,17 @@
     padding-bottom: 1rem;
   }
 
-  &__button {
-    width: 2rem;
-    height: 2rem;
-    margin: 0 1rem;
-    color: var(--button-color);
-
-    @media (hover:hover) {
-      &:hover {
-        cursor: pointer;
-        color: var(--button-color-hover);
-      }
-    }
-
-    @media (hover:none) {
-      &:active {
-        color: var(--button-color-hover);
-      }
-    }
+  &__track {
+    position: relative !important;
+    width: 100% !important;
+    height: 20rem !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: 2rem;
   }
 
-  &__container {
-    width: 80%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+  &__slide {
+    width: 100% !important;
   }
 }

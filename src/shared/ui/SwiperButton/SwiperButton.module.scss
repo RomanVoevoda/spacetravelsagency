@@ -1,0 +1,29 @@
+.button {
+  position: absolute;
+  z-index: 10;
+  top: calc(50% - 2rem);
+  width: 4rem;
+  height: 4rem;
+  color: var(--button-color);
+
+  @media (hover:hover) {
+    &:hover {
+      cursor: pointer;
+      color: var(--button-color-hover);
+    }
+  }
+
+  @media (hover:none) {
+    &:active {
+      color: var(--button-color-hover);
+    }
+  }
+
+  &_left {
+    left: 1rem;
+  }
+
+  &_right {
+    right: 1rem;
+  }
+}
