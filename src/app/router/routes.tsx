@@ -10,7 +10,7 @@ type route = {
 
 export const routes: route[]  = [
   {
-    path: '/main', 
+    path: '/', 
     element: 
       <Layout>
         <Main />
@@ -46,6 +46,6 @@ export const routes: route[]  = [
   },
   {
     path: '*', 
-    element: <Navigate to='/main' replace />
+    element: <Navigate to='/' replace />
   }
 ]

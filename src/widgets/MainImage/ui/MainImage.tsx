@@ -16,14 +16,20 @@ const MainImage: FC = () => {
     <div className={classes.mainImage}>
       <GalleryImage
         src={
-          (data) 
+          (data && data.hdurl) 
           ? 
           data.hdurl 
           : 
-          'ошибка загрузки изображения'
+          'https://i.imgur.com/unAY5wa.png'
         }
         alt={'Изображение дня'}
-        title={(data) ? data.title : 'Ошибка загрузки'}
+        title={
+          (data && data.hdurl) 
+          ? 
+          data.title 
+          : 
+          ''
+        }
       />
     </div>
   );

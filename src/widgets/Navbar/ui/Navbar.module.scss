@@ -4,10 +4,11 @@
   justify-content: center;
   align-items: center;
   padding: 0 1rem;
+  background-color: var(--main-background-color);
 
   @media screen and (width < 600px) {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: $mobile-menu-index;
     height: 100dvh;
@@ -23,6 +24,7 @@
 
     &_open {
       transform: translateX(0);
+      overflow: hidden;
     }
 
     &_closed {
@@ -93,6 +95,7 @@
     width: 3rem;
     height: 3rem;
     padding: 1rem;
+    padding-right: 0;
     align-self: flex-end;
     color: var(--secondary-font-color);
 

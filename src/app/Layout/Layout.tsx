@@ -2,6 +2,7 @@ import { Footer, Header, Navbar } from '@/widgets';
 import { FC, ReactNode, useState } from 'react';
 import classes from './Layout.module.scss';
 import { MainImage } from '@/widgets';
+import { stopScrolling } from '@/shared/lib';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -12,8 +13,9 @@ const Layout: FC<LayoutProps> = ({children}) => {
 
   const changeNavbarState = (value: 'open' | 'closed') => {
     setNavbarState(value);
+    stopScrolling();
   }
-  
+
   return (
     <div className={classes.layout}>
       <Header openNavbar={changeNavbarState}/>

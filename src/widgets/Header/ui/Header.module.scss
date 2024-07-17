@@ -7,6 +7,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--main-background-color);
+
+  &_mobile {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0;
+    z-index: $sticky-index;
+  }
 
   &__paragraph {
     position: absolute;
