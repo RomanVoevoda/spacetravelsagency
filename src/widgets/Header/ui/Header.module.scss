@@ -3,8 +3,7 @@
   height: 5rem;
   width: 100%;
   top: 0;
-  padding: 0 2rem 0 1rem;
-  width: calc(100% - 3rem);
+  padding: 0 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +31,7 @@
 
   &__icon {
     color: var(--button-color);
-    padding-right: 1.5rem;
+    padding-right: 2rem;
     font-size: $normal-font-size;
 
     @media(hover:hover) {

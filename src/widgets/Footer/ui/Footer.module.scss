@@ -1,15 +1,13 @@
 .footer {
   height: 5rem;
   width: 100%;
+  margin: 1rem 0;
+  padding: 0 1rem;
   position: relative;
-  top: 0;
+  bottom: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
  
   &__icon {
     color: var(--button-color);
@@ -52,11 +50,6 @@
   }
 
   &__link {
-    -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
-            user-select: all;
-
     @media (hover: hover) {
       &:hover{
         cursor: pointer;

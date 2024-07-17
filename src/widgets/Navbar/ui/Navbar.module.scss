@@ -1,5 +1,5 @@
 .navbar {
-  width: calc(100% - 2rem);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,10 +39,6 @@
     font-size: $extra-small-font-size;
     white-space: nowrap;
     color: var(--button-font-color);
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;   
 
     @media screen and (width < 600px){
       padding: 2rem;
@@ -112,9 +108,5 @@
     text-align: center;
     color: var(--main-font-color);
     text-shadow: 0 0 0.2rem var(--main-font-color);
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
   }
 }

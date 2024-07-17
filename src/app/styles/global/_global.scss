@@ -2,9 +2,12 @@
   box-sizing: inherit;
 }
 
+body, area, menu, ul, a {
+  all: unset;
+}
+
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 * {
@@ -12,8 +15,12 @@ html {
   padding: 0;
 }
 
-body, area, menu, ul, a {
-  all: unset;
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  box-sizing: border-box;
 }
 
 img, picture, svg, video {
