@@ -1,7 +1,11 @@
-import { Main, Mars, HotTours, PriceCalculator, About } from "@/pages";
-import { ReactNode } from "react";
+import { lazy, ReactNode } from "react";
 import { Navigate } from "react-router-dom";
-import { Layout } from "../Layout";
+
+const Main = lazy( () => import('@/pages/Main/ui/Main'));
+const Mars = lazy( () => import('@/pages/Mars/ui/Mars'));
+const HotTours = lazy( () => import('@/pages/HotTours/ui/HotTours'));
+const PriceCalculator = lazy( () => import('@/pages/PriceCalculator/ui/PriceCalculator'));
+const About = lazy( () => import('@/pages/About/ui/About'));
 
 type route = {
   path: string,
@@ -10,42 +14,32 @@ type route = {
 
 export const routes: route[]  = [
   {
-    path: '/', 
+    path: '/main', 
     element: 
-      <Layout>
-        <Main />
-      </Layout>
+      <Main />
   },
   {
     path: '/mars', 
     element: 
-      <Layout>
-        <Mars />
-      </Layout>
+      <Mars />
   },
   {
     path: '/hottours', 
     element: 
-      <Layout>
-        <HotTours />
-      </Layout>
+      <HotTours />
   },
   {
     path: '/prices', 
     element: 
-      <Layout>
-        <PriceCalculator />
-      </Layout>
+      <PriceCalculator />
   },
   {
     path: '/about', 
     element: 
-    <Layout>
       <About />
-    </Layout>
   },
   {
     path: '*', 
-    element: <Navigate to='/' replace />
+    element: <Navigate to='/main' replace />
   }
 ]

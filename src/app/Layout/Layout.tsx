@@ -1,14 +1,13 @@
 import { Footer, Header, Navbar } from '@/widgets';
-import { FC, ReactNode, useState } from 'react';
+import { FC, Suspense, useState } from 'react';
 import classes from './Layout.module.scss';
 import { MainImage } from '@/widgets';
 import { stopScrolling } from '@/shared/lib';
+import { Outlet } from 'react-router-dom';
+import { SunSpan, SvgClouds } from '@/shared/ui';
+import Loader from '@/shared/ui/Loader/Loader';
 
-interface LayoutProps {
-  children?: ReactNode;
-}
-
-const Layout: FC<LayoutProps> = ({children}) => {
+const Layout: FC = () => {
   const [navbarState, setNavbarState] = useState<'open' | 'closed'>('closed');
 
   const changeNavbarState = (value: 'open' | 'closed') => {
@@ -21,7 +20,18 @@ const Layout: FC<LayoutProps> = ({children}) => {
       <Header openNavbar={changeNavbarState}/>
       <MainImage />
       <Navbar navbarState={navbarState} closeNavbar={changeNavbarState}/>
-        {children}
+
+      <main className={classes.layout__container}>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+        
+        <SvgClouds position={'left'}/>
+        <SvgClouds position={'center'}/>
+        <SvgClouds position={'right'}/>
+        <SunSpan />
+      </main>
+
       <Footer />
     </div>
   );

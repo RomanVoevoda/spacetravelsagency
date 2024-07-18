@@ -4,7 +4,7 @@ interface pathObject {
 }
 
 export const pathsArray: pathObject[] = [
-  {path: '/', text: 'Главная'},
+  {path: '/main', text: 'Главная'},
   {path: '/mars', text: 'Марс'},
   {path: '/hottours', text: 'Горячие туры'},
   {path: '/prices', text: 'Калькулятор цен'},
