@@ -4,7 +4,7 @@ import classes from './Layout.module.scss';
 import { MainImage } from '@/widgets';
 import { stopScrolling } from '@/shared/lib';
 import { Outlet } from 'react-router-dom';
-import { SunSpan, SvgClouds } from '@/shared/ui';
+import { Modal, SunSpan, SvgClouds } from '@/shared/ui';
 import Loader from '@/shared/ui/Loader/Loader';
 
 const Layout: FC = () => {
@@ -22,7 +22,11 @@ const Layout: FC = () => {
       <Navbar navbarState={navbarState} closeNavbar={changeNavbarState}/>
 
       <main className={classes.layout__container}>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={
+          <Modal>
+            <Loader />
+          </Modal> 
+        }>
           <Outlet />
         </Suspense>
         
