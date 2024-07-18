@@ -10,6 +10,8 @@ import 'swiper/scss';
 import 'swiper/scss/a11y';
 import 'swiper/scss/zoom';
 import { SwiperButton } from '@/shared/ui';
+import { useFetching } from '@/shared/lib';
+import Loader from '@/shared/ui/Loader/Loader';
 
 interface GalleryProps {
   title: string
@@ -18,50 +20,64 @@ interface GalleryProps {
 const Gallery: FC<GalleryProps> = ({title}) => {
   const [images, setImages] = useState<imageData[]>([]);
 
+  const [fetchImages, isImagesLoading, LoadingError] = useFetching( async () => {
+    await ApiService.fetchMarsImages(apiKey, setImages);
+  })
+
   useEffect(() => {
-    ApiService.fetchMarsImages(apiKey, setImages);
+    fetchImages();
   }, [])
 
   return (
     <div className={classes.gallery}>
       <p className={classes.gallery__title}>
         {title}
-      </p>    
+      </p>
 
-      <Swiper 
-        className={classes.gallery__track}
-        modules={[A11y]}
-        spaceBetween={0}
-        slidesPerView={1}
-        slidesPerGroup={1}
-        scrollbar={{ draggable: true }}
-        loop={true}
-        zoom={true}
-        speed={100}
-      >
+      {isImagesLoading &&
+        <Loader />
+      }
 
-        <SwiperButton direction={'left'} speed={100}/>
+      {LoadingError &&
+        <h1>Произошла ошибка загрузки изображений</h1>
+      }
 
-        {images.map(image => (
-          <SwiperSlide
-            className={
-              'swiper-zoom-container'
-              +
-              ' '
-              +           
-              classes.gallery__slide
-            }
-            key={image.id}
-          >
-            <GalleryImage 
-              src={image.img_src} 
-              alt={'Изображение галереи'}           
-            />
-          </SwiperSlide>
-        ))}
+      {images.length > 0 &&
+        <Swiper 
+          className={classes.gallery__track}
+          modules={[A11y]}
+          spaceBetween={0}
+          slidesPerView={1}
+          slidesPerGroup={1}
+          scrollbar={{ draggable: true }}
+          loop={true}
+          zoom={true}
+          speed={100}
+        >
 
-        <SwiperButton direction={'right'} speed={100}/>
-      </Swiper>
+          <SwiperButton direction={'left'} speed={100}/>
+
+          {images.map(image => (
+            <SwiperSlide
+              className={
+                'swiper-zoom-container'
+                +
+                ' '
+                +           
+                classes.gallery__slide
+              }
+              key={image.id}
+            >
+              <GalleryImage 
+                src={image.img_src} 
+                alt={'Изображение галереи'}           
+              />
+            </SwiperSlide>
+          ))}
+
+          <SwiperButton direction={'right'} speed={100}/>
+        </Swiper>
+      }
     </div>
   );
 };

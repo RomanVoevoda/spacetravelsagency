@@ -20,7 +20,7 @@ export default class ApiService {
   
       callback(response.data.photos);
     } catch(e) {
-      console.log(e);
+      throw new Error;
     }
   }
 

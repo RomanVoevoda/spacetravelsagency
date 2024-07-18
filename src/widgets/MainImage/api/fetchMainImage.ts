@@ -5,7 +5,7 @@ export async function fetchMainImage(apiKey: string, callback: React.Dispatch<Re
   let baseURL = 'https://api.nasa.gov/planetary/apod?'
 
   try {
-    let result = await axios.get<MainImageData>(baseURL, {
+    let result =  await axios.get<MainImageData>(baseURL, {
       params: {
         api_key: apiKey
       }
@@ -13,6 +13,6 @@ export async function fetchMainImage(apiKey: string, callback: React.Dispatch<Re
 
     callback(result.data);
   } catch(e) {
-    console.log(e);
+    throw new Error;
   }
 }

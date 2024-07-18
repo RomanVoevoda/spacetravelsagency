@@ -4,16 +4,30 @@ import { apiKey } from '@/shared/api';
 import classes from './MainImage.module.scss';
 import { MainImageData } from '../types/types';
 import { GalleryImage } from '@/entities';
+import { useFetching } from '@/shared/lib';
+import Loader from '@/shared/ui/Loader/Loader';
 
-const MainImage: FC = () => {
+const MainImage: FC = () =>  {
   const [data, setData] = useState<MainImageData | undefined>(undefined);
 
+  const [fetchImage, isImageLoading, LoadingError] = useFetching( async () => {
+    await fetchMainImage(apiKey, setData);
+  })
+
   useEffect( () => {
-    fetchMainImage(apiKey, setData);
+    fetchImage();
   }, []);
   
   return (
-    <div className={classes.mainImage}>
+    <div className={classes.mainImage}>   
+      {isImageLoading &&
+        <Loader />
+      }
+
+      {LoadingError &&
+        <h1>Произошла ошибка загрузки изображения</h1>
+      }
+
       <GalleryImage
         src={
           (data && data.hdurl) 

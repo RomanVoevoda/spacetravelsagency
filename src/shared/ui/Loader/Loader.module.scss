@@ -1,0 +1,55 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-background-color);
+  z-index: $loader-index;
+  border-radius: inherit;
+
+  &__container {
+    position: relative;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    -webkit-animation: rotation 5s ease infinite;
+            animation: rotation 5s ease infinite;
+    overflow: hidden;
+
+    @-webkit-keyframes rotation {
+      0% {transform: rotate(0)}
+      25% {transform: rotate(90deg)}
+      50% {transform: rotate(180deg)}
+      75% {transform: rotate(270deg)}
+      100% {transform: rotate(360deg)}
+    }
+
+    @keyframes rotation {
+      0% {transform: rotate(0)}
+      25% {transform: rotate(90deg)}
+      50% {transform: rotate(180deg)}
+      75% {transform: rotate(270deg)}
+      100% {transform: rotate(360deg)}
+    }
+  }
+
+  &__div {
+    width: 65%;
+    height: 100%;
+    background-image: radial-gradient(circle,rgba(0,0,0,0) 0%, var(--button-color) 70%);
+  }
+
+  &__stub {
+    position: absolute;
+    background-color: var(--main-background-color);
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    right: 10%;
+    left: 10%;
+    bottom: 10%;
+    border-radius: 50%;
+    z-index: 5;
+  }
+}
