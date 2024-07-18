@@ -9,9 +9,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/a11y';
 import 'swiper/scss/zoom';
-import { SwiperButton } from '@/shared/ui';
+import { SwiperButton, Loader } from '@/shared/ui';
 import { useFetching } from '@/shared/lib';
-import Loader from '@/shared/ui/Loader/Loader';
 
 interface GalleryProps {
   title: string

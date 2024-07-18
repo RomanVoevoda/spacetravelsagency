@@ -10,7 +10,13 @@ interface GalleryImageProps {
 const GalleryImage: FC<GalleryImageProps> = ({title, src, alt}) => {
   return (
     <div className={classes.galleryImage}>   
-      <img src={src} className={classes.galleryImage__image} alt={alt}></img>
+      <img 
+        src={src} 
+        className={classes.galleryImage__image} 
+        alt={alt}
+        loading="lazy"
+      >
+      </img>
       <p className={classes.galleryImage__paragraph}>{title}</p>   
     </div>  
   )

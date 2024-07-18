@@ -5,7 +5,7 @@ import classes from './MainImage.module.scss';
 import { MainImageData } from '../types/types';
 import { GalleryImage } from '@/entities';
 import { useFetching } from '@/shared/lib';
-import Loader from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui';
 
 const MainImage: FC = () =>  {
   const [data, setData] = useState<MainImageData | undefined>(undefined);

@@ -4,8 +4,7 @@ import classes from './Layout.module.scss';
 import { MainImage } from '@/widgets';
 import { stopScrolling } from '@/shared/lib';
 import { Outlet } from 'react-router-dom';
-import { Modal, SunSpan, SvgClouds } from '@/shared/ui';
-import Loader from '@/shared/ui/Loader/Loader';
+import { Loader, Modal, SunSpan, SvgClouds } from '@/shared/ui';
 
 const Layout: FC = () => {
   const [navbarState, setNavbarState] = useState<'open' | 'closed'>('closed');

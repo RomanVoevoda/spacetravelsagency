@@ -10,8 +10,16 @@
 
   &__container {
     width: 100%;
-    min-height: 100dvh;
+    min-height: calc(100dvh - 26.8rem);
     overflow: hidden;
     position: relative;
+
+    @media screen and (width < 600px) {
+      min-height: calc(100dvh - 21rem);
+    }
+
+    @media screen and (600px <= width < 1000px) {
+      min-height: calc(100dvh - 25.8rem);
+    }
   }
 }

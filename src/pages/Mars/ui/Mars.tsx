@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import classes from './Mars.module.scss';
 import { Gallery } from '@/widgets';
+import { FlexDiv } from '@/shared/ui';
 
 const Mars: FC = () => {
   return (
-    <div className={classes.mars}>
+    <FlexDiv direction={'column'} align={'center'}>
       <Gallery title={'Горячие изображения с Марса'}/>
-    </div>
+    </FlexDiv>
   );
 };
 

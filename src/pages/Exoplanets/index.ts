@@ -1,0 +1,1 @@
+export { default as Exoplanets } from './ui/Exoplanets';

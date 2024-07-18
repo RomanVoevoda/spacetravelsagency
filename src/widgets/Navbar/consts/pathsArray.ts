@@ -1,12 +1,14 @@
+import { routesEnum } from "@/shared/routes/routes";
+
 interface pathObject {
   path: string;
   text: string;
 }
 
 export const pathsArray: pathObject[] = [
-  {path: '/main', text: 'Главная'},
-  {path: '/mars', text: 'Марс'},
-  {path: '/hottours', text: 'Горячие туры'},
-  {path: '/prices', text: 'Калькулятор цен'},
-  {path: '/about', text: 'О нас'} 
+  {path: routesEnum.main, text: 'Главная'},
+  {path: routesEnum.mars, text: 'Марс'},
+  {path: routesEnum.exoplanets, text: 'Экзопланеты'},
+  {path: routesEnum.calculator, text: 'Калькулятор цен'},
+  {path: routesEnum.about, text: 'О нас'} 
 ]

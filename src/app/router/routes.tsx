@@ -1,9 +1,10 @@
+import { routesEnum } from "@/shared/routes/routes";
 import { lazy, ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 
 const Main = lazy( () => import('@/pages/Main/ui/Main'));
 const Mars = lazy( () => import('@/pages/Mars/ui/Mars'));
-const HotTours = lazy( () => import('@/pages/HotTours/ui/HotTours'));
+const Exoplanets = lazy( () => import('@/pages/Exoplanets/ui/Exoplanets'));
 const PriceCalculator = lazy( () => import('@/pages/PriceCalculator/ui/PriceCalculator'));
 const About = lazy( () => import('@/pages/About/ui/About'));
 
@@ -14,32 +15,32 @@ type route = {
 
 export const routes: route[]  = [
   {
-    path: '/main', 
+    path: routesEnum.main, 
     element: 
       <Main />
   },
   {
-    path: '/mars', 
+    path: routesEnum.mars, 
     element: 
       <Mars />
   },
   {
-    path: '/hottours', 
+    path: routesEnum.exoplanets, 
     element: 
-      <HotTours />
+      <Exoplanets />
   },
   {
-    path: '/prices', 
+    path: routesEnum.calculator, 
     element: 
       <PriceCalculator />
   },
   {
-    path: '/about', 
+    path: routesEnum.about, 
     element: 
       <About />
   },
   {
     path: '*', 
-    element: <Navigate to='/main' replace />
+    element: <Navigate to={ routesEnum.main } replace />
   }
 ]
