@@ -1,0 +1,53 @@
+.text {
+  &_martian {
+    font-family: "MartianMono";
+  }
+
+  &_rubik {
+    font-family: "RubikMono";
+  }
+
+  &_extra_small {
+    font-size: $extra-small-font-size;
+  }
+
+  &_small {
+    font-size: $smaller-font-size;
+  }
+
+  &_normal {
+    font-size: $normal-font-size;
+  }
+
+  &_big {
+    font-size: $bigger-font-size
+  }
+
+  &_italic {
+    font-style: italic;
+  }
+
+  &_start {
+    text-align: start;
+  }
+
+  &_center {
+    text-align: center;
+  }
+
+  &_end {
+    text-align: end;
+  }
+
+  &_small_indent {
+    text-indent: 0.5rem;
+  }
+
+  &_normal_indent {
+    text-indent: 0.7rem;
+  }
+
+  &_big_indent {
+    text-indent: 1rem;
+  }
+}

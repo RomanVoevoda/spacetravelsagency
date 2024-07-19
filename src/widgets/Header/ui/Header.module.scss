@@ -16,15 +16,12 @@
     z-index: $sticky-index;
   }
 
-  &__paragraph {
+  &__text_container {
     position: absolute;
     width: 100%;
     color: var(--main-font-color);
     text-shadow: 0 0 0.2rem var(--main-font-color-hover);
-    margin: 1rem 0;
-    font-size: $normal-font-size;
-    font-family: RubikMono;
-    text-align: center;
+    padding: 1rem 0;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -32,8 +29,6 @@
 
     @media screen and (width < 600px) {
       position: relative;
-      text-align: end;
-      font-size: $extra-small-font-size;
     }
   }
 

@@ -1,6 +1,6 @@
 import { getComponentClass } from '@/shared/lib';
-import './FlexDiv.scss';
 import { FC, ReactNode } from 'react';
+import classes from './FlexDiv.module.scss';
 
 export interface DivProps {
   direction?: 'row' | 'row_reverse' | 'column' | 'column_reverse';
@@ -9,12 +9,12 @@ export interface DivProps {
   children?: ReactNode;
 }
 
-const ReverseDiv: FC<DivProps> = ({direction, justify, align, children}) => {
+const ReverseDiv: FC<DivProps> = (props) => {
   return (
     <div className={
-      getComponentClass('flex', '_', {direction, justify, align})
+      getComponentClass('flex', '_', props, classes)
     }>
-      {children}
+      {props.children}
     </div>
   );
 };

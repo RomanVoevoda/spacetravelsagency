@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/scss';
 import 'swiper/scss/a11y';
-import 'swiper/scss/zoom';
 import { SwiperButton, Loader } from '@/shared/ui';
 import { useFetching } from '@/shared/lib';
 
@@ -38,7 +37,9 @@ const Gallery: FC<GalleryProps> = ({title}) => {
       }
 
       {LoadingError &&
-        <h1>Произошла ошибка загрузки изображений</h1>
+        <h1 className={classes.gallery__title}>
+          Произошла ошибка загрузки изображений
+        </h1>
       }
 
       {images.length > 0 &&
@@ -58,11 +59,7 @@ const Gallery: FC<GalleryProps> = ({title}) => {
 
           {images.map(image => (
             <SwiperSlide
-              className={
-                'swiper-zoom-container'
-                +
-                ' '
-                +           
+              className={         
                 classes.gallery__slide
               }
               key={image.id}

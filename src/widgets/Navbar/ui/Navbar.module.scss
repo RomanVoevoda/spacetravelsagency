@@ -104,11 +104,8 @@
     }
   }
 
-  &__paragraph {
+  &__text_container {
     padding: 1rem 2rem;
-    font-size: $normal-font-size;
-    font-family: RubikMono;
-    text-align: center;
     color: var(--main-font-color);
     text-shadow: 0 0 0.2rem var(--main-font-color);
   }

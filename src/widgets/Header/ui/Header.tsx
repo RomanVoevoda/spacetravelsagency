@@ -3,7 +3,7 @@ import classes from './Header.module.scss';
 import { ThemeSwitcher } from '@/entities';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FlexDiv } from '@/shared/ui';
+import { FlexDiv, TextSlice } from '@/shared/ui';
 
 interface HeaderProps {
   openNavbar: (value: 'open' | 'closed') => void;
@@ -32,9 +32,11 @@ const Header: FC<HeaderProps> = ({openNavbar}) => {
         <ThemeSwitcher />
 
         <FlexDiv align='align_center' justify='justify_end'>
-          <p className={classes.header__paragraph}>
-             Space Travels Agency
-          </p>
+          <div className={classes.header__text_container}>
+            <TextSlice size={'extra_small'} align={'end'} font={'rubik'}>
+              Space Travels Agency
+            </TextSlice>    
+          </div>
         </FlexDiv>
       </FlexDiv>
     </header>
@@ -42,9 +44,11 @@ const Header: FC<HeaderProps> = ({openNavbar}) => {
     :
 
     <header className={classes.header}>
-      <p className={classes.header__paragraph}>
-        Space Travels Agency
-      </p>
+      <div className={classes.header__text_container}>
+        <TextSlice size={'normal'} align={'center'} font={'rubik'}>
+          Space Travels Agency
+        </TextSlice>
+      </div>
 
       <FlexDiv justify='justify_end' align='align_center'>
         <ThemeSwitcher />

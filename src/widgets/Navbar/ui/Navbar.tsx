@@ -4,6 +4,7 @@ import classes from './Navbar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { pathsArray } from '../consts/pathsArray';
+import { TextSlice } from '@/shared/ui';
 
 interface NavbarProps {
   navbarState: 'open' | 'closed';
@@ -29,9 +30,11 @@ const Navbar: FC<NavbarProps> = ({ navbarState, closeNavbar }) => {
         onClick={() => closeNavbar("closed")}
       />
 
-      <p className={classes.navbar__paragraph}>
-        Space Travels Agency
-      </p>
+      <div className={classes.navbar__text_container}>
+        <TextSlice font={'rubik'} align={'center'} size={'normal'}>
+          Space Travels Agency
+        </TextSlice>
+      </div>
 
       {pathsArray.map(path => (
         <Link 

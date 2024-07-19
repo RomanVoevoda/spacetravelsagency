@@ -24,10 +24,6 @@ const MainImage: FC = () =>  {
         <Loader />
       }
 
-      {LoadingError &&
-        <h1>Произошла ошибка загрузки изображения</h1>
-      }
-
       <GalleryImage
         src={
           (data && data.hdurl) 
