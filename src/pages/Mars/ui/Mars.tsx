@@ -5,7 +5,7 @@ import { FlexDiv } from '@/shared/ui';
 
 const Mars: FC = () => {
   return (
-    <FlexDiv direction={'column'} align={'center'}>
+    <FlexDiv direction={'column'} align={'align_center'}>
       <Gallery title={'Горячие изображения с Марса'}/>
     </FlexDiv>
   );

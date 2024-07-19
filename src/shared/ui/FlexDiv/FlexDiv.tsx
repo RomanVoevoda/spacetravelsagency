@@ -1,13 +1,20 @@
+import { getComponentClass } from '@/shared/lib';
 import './FlexDiv.scss';
-import { returnFlexDivClass } from './helpers/returnFlexDivClass';
-import { DivProps } from './types/types';
+import { FC, ReactNode } from 'react';
 
-const ReverseDiv = (props: DivProps) => {
+export interface DivProps {
+  direction?: 'row' | 'row_reverse' | 'column' | 'column_reverse';
+  justify?: 'justify_start' | 'justify_center' | 'justify_end';
+  align?: 'align_start' | 'align_center' | 'align_end';
+  children?: ReactNode;
+}
+
+const ReverseDiv: FC<DivProps> = ({direction, justify, align, children}) => {
   return (
     <div className={
-      returnFlexDivClass(props) 
+      getComponentClass('flex', '_', {direction, justify, align})
     }>
-      {props.children}
+      {children}
     </div>
   );
 };

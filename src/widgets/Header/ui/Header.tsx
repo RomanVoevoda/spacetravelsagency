@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({openNavbar}) => {
       +
       classes.header_mobile
     }>
-      <FlexDiv align='center'>
+      <FlexDiv align='align_center'>
         <FontAwesomeIcon 
           icon={faBars} 
           className={classes.header__icon}
@@ -31,7 +31,7 @@ const Header: FC<HeaderProps> = ({openNavbar}) => {
 
         <ThemeSwitcher />
 
-        <FlexDiv align='center' justify='end'>
+        <FlexDiv align='align_center' justify='justify_end'>
           <p className={classes.header__paragraph}>
              Space Travels Agency
           </p>
@@ -46,7 +46,7 @@ const Header: FC<HeaderProps> = ({openNavbar}) => {
         Space Travels Agency
       </p>
 
-      <FlexDiv justify='end' align='center'>
+      <FlexDiv justify='justify_end' align='align_center'>
         <ThemeSwitcher />
       </FlexDiv>
     </header>
