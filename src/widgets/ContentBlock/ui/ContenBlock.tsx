@@ -2,7 +2,7 @@ import { FC } from 'react';
 import classes from './ContentBlock.module.scss';
 import { ContentBlockProps } from '../types/types';
 import { TextSlice } from '@/shared/ui';
-import { GalleryImage } from '@/entities';
+import { GalleryImage } from '@/shared/ui';
 
 
 const ContentBlock: FC<Partial<ContentBlockProps>> = (props) => {

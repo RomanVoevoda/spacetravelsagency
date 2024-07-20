@@ -1,10 +1,10 @@
-import { Footer, Header, Navbar } from '@/widgets';
+import { DecorationBlock, Footer, Header, Navbar } from '@/widgets';
 import { FC, Suspense, useState } from 'react';
 import classes from './Layout.module.scss';
 import { MainImage } from '@/widgets';
 import { stopScrolling } from '@/shared/lib';
 import { Outlet } from 'react-router-dom';
-import { Loader, Modal, SunSpan, SvgClouds } from '@/shared/ui';
+import { Loader, Modal } from '@/shared/ui';
 
 const Layout: FC = () => {
   const [navbarState, setNavbarState] = useState<'open' | 'closed'>('closed');
@@ -29,10 +29,7 @@ const Layout: FC = () => {
           <Outlet />
         </Suspense>
         
-        <SvgClouds position={'left'}/>
-        <SvgClouds position={'center'}/>
-        <SvgClouds position={'right'}/>
-        <SunSpan />
+        <DecorationBlock />
       </main>
 
       <Footer />

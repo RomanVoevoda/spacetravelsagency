@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import classes from './Gallery.module.scss';
 import { apiKey, ApiService } from '@/shared/api';
 import { imageData } from '../types/types';
-import { GalleryImage } from '@/entities';
+import { GalleryImage } from '@/shared/ui';
 import { A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

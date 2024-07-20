@@ -3,14 +3,14 @@ import { fetchMainImage } from '../api/fetchMainImage';
 import { apiKey } from '@/shared/api';
 import classes from './MainImage.module.scss';
 import { MainImageData } from '../types/types';
-import { GalleryImage } from '@/entities';
+import { GalleryImage } from '@/shared/ui';
 import { useFetching } from '@/shared/lib';
 import { Loader } from '@/shared/ui';
 
 const MainImage: FC = () =>  {
   const [data, setData] = useState<MainImageData | undefined>(undefined);
 
-  const [fetchImage, isImageLoading, LoadingError] = useFetching( async () => {
+  const [fetchImage, isImageLoading] = useFetching( async () => {
     await fetchMainImage(apiKey, setData);
   })
 

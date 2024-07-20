@@ -17,7 +17,10 @@ const GalleryImage: FC<GalleryImageProps> = ({title, src, alt}) => {
         loading="lazy"
       >
       </img>
-      <p className={classes.galleryImage__paragraph}>{title}</p>   
+      
+      {title &&
+        <p className={classes.galleryImage__paragraph}>{title}</p> 
+      }  
     </div>  
   )
 }

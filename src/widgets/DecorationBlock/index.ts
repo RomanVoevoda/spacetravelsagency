@@ -1,0 +1,1 @@
+export { default as DecorationBlock } from './ui/DecorationBlock';

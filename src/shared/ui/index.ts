@@ -5,3 +5,4 @@ export { SunSpan } from './SunSpan';
 export { Modal } from './Modal';
 export { Loader } from './Loader';
 export { TextSlice } from './TextSlice';
+export { GalleryImage } from './GalleryImage';

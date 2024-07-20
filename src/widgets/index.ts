@@ -5,3 +5,4 @@ export { Gallery } from './Gallery';
 export { MainImage } from './MainImage';
 export { ContentBlock } from'./ContentBlock';
 export { useBlockBuilder } from './ContentBlock';
+export { DecorationBlock } from './DecorationBlock';
