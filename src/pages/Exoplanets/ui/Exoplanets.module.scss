@@ -1,3 +1,26 @@
 .exoplanets {
+  &__buttons_container {
 
+  }
+
+  &__cards_container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    padding: 0 1rem;
+
+    @media screen and (600px <= width <= 1000px) {
+      grid-template-columns: auto auto auto;
+    }
+  
+    @media screen and (width > 1000px) {
+      grid-template-columns: auto auto auto auto auto;
+    }
+
+    @media screen and (width >= 1700px) {
+      grid-template-columns: auto auto auto auto auto auto;
+    }
+  }
 }

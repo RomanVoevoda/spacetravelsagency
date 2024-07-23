@@ -7,6 +7,10 @@
     font-family: "RubikMono";
   }
 
+  &_smallest {
+    font-size: $smallest-font-size;
+  }
+
   &_extra_small {
     font-size: $extra-small-font-size;
   }

@@ -4,7 +4,7 @@ import classes from './TextSlice.module.scss';
 
 interface TextSliceProps {
   font?: 'martian' | 'rubik';
-  size: 'extra_small' | 'small' | 'normal' | 'big';
+  size: 'smallest' | 'extra_small' | 'small' | 'normal' | 'big';
   style?: 'italic';
   align?: 'end' | 'center' | 'start';
   indent?: 'small_indent' | 'normal_indent' | 'big_indent';
