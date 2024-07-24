@@ -13,6 +13,7 @@
     min-height: calc(100dvh - 26.8rem);
     overflow: hidden;
     position: relative;
+    padding-bottom: 5vh;
 
     @media screen and (width < 600px) {
       min-height: calc(100dvh - 21rem);

@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from 'react';
 import classes from './Exoplanets.module.scss';
-import { FlexDiv, Loader, TextSlice } from '@/shared/ui';
+import { FlexDiv, Loader, Modal, TextSlice } from '@/shared/ui';
 import { useBlockBuilder } from '@/widgets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faSort } from '@fortawesome/free-solid-svg-icons';
 import { useFetching } from '@/shared/lib';
 import { ApiService } from '@/shared/api';
 import { PlanetCard } from '@/entities';
-import { PlanetData } from '../types/types';
+import { PlanetData } from '@/shared/api'; 
 import { useNavigate } from 'react-router-dom';
 import { transitToPlanet } from '../lib/helpers/transitToPlanet';
 
@@ -33,6 +33,12 @@ const Exoplanets: FC = () => {
 
   return (
     <FlexDiv align={'align_center'} direction={'column'}>
+      {isLoading &&
+        <Modal>
+          <Loader />
+        </Modal>     
+      }
+
       {content}
 
       <div className={classes.exoplanets__buttons_container}>
@@ -49,10 +55,6 @@ const Exoplanets: FC = () => {
       </div>
 
       <div className={classes.exoplanets__cards_container}>
-        {isLoading && 
-          <Loader />
-        }
-
         {isError &&
           <TextSlice size={'normal'}>
             Проиошла ошибка загрузки планет.

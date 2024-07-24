@@ -1,4 +1,4 @@
-import { PlanetData } from '@/pages/Exoplanets/types/types';
+import { PlanetData } from '@/shared/api'; 
 import { ApiService } from '@/shared/api';
 import { useFetching } from '@/shared/lib';
 import { FlexDiv, Loader, Modal, TextSlice } from '@/shared/ui';
