@@ -7,6 +7,7 @@ const Mars = lazy( () => import('@/pages/Mars/ui/Mars'));
 const Exoplanets = lazy( () => import('@/pages/Exoplanets/ui/Exoplanets'));
 const PriceCalculator = lazy( () => import('@/pages/PriceCalculator/ui/PriceCalculator'));
 const About = lazy( () => import('@/pages/About/ui/About'));
+const ExoplanetIdPage = lazy( () => import('@/pages/ExoplanetIdPage/ui/ExoplanetIdPage'))
 
 type route = {
   path: string,
@@ -38,6 +39,11 @@ export const routes: route[]  = [
     path: routesEnum.about, 
     element: 
       <About />
+  },
+  {
+    path: routesEnum.exoplanetById,
+    element:
+      <ExoplanetIdPage />
   },
   {
     path: '*', 

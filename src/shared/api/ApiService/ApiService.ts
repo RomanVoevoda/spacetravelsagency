@@ -34,6 +34,16 @@ export default class ApiService {
     }
   }
 
+  public static async fetchPlanetById(callback: React.Dispatch<React.SetStateAction<any>>, id: string) {
+    try {   
+      const response = await axios.get(`https://api.jikan.moe/v4/anime/${id}`);
+
+      callback(response.data.data);
+    } catch(e) {
+      throw new Error()
+    }
+  }
+
   public static roll(min: number, max: number) {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);

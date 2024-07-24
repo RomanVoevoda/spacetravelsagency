@@ -1,0 +1,1 @@
+export { default as ExoplanetIdPage } from './ui/ExoplanetIdPage';

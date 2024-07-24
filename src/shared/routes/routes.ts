@@ -3,5 +3,6 @@ export const enum routesEnum {
   mars = '/mars',
   exoplanets = '/exoplanets',
   calculator = '/calculator',
-  about = '/about'
+  about = '/about',
+  exoplanetById = '/exoplanets/:id'
 }

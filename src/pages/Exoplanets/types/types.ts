@@ -14,4 +14,6 @@ export interface PlanetData {
   images?: PlanetImages;
   score: number;
   mal_id: number;
+  synopsis?: string;
+  rating?: string;
 }

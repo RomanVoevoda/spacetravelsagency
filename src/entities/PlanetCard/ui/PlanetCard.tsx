@@ -6,12 +6,13 @@ interface PlanetCardProps {
   title: string;
   image_src?: string;
   score?: number;
+  onClick?: () => void;
 }
 
 const PlanetCard: FC<PlanetCardProps> = (props) => {
   /*Здесь можно было бы использовать паттерн фабрика,но */
   return (
-    <article className={classes.card}>
+    <article className={classes.card} onClick={props.onClick}>
       <TextSlice size={'smallest'} align={'center'}>{props.title}</TextSlice>
       
       <div className={classes.card__image_container}>

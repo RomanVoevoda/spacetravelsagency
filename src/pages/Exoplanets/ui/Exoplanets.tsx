@@ -8,6 +8,8 @@ import { useFetching } from '@/shared/lib';
 import { ApiService } from '@/shared/api';
 import { PlanetCard } from '@/entities';
 import { PlanetData } from '../types/types';
+import { useNavigate } from 'react-router-dom';
+import { transitToPlanet } from '../lib/helpers/transitToPlanet';
 
 const Exoplanets: FC = () => {
   const builder = useBlockBuilder()
@@ -22,6 +24,8 @@ const Exoplanets: FC = () => {
   const [fetchPlanets, isLoading, isError] = useFetching( async () => {
     await ApiService.fetchExoplanets(setPlanets);
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchPlanets();
@@ -62,6 +66,7 @@ const Exoplanets: FC = () => {
               image_src={planet.images?.webp?.image_url}
               score={planet.score}
               key={planet.mal_id}
+              onClick={() => transitToPlanet(navigate, planet.mal_id)}
             />
           ))    
         }
