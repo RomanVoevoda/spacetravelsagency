@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import classes from './Gallery.module.scss';
 import { apiKey, ApiService } from '@/shared/api';
 import { imageData } from '../types/types';
-import { GalleryImage } from '@/shared/ui';
+import { GalleryImage, TextSlice } from '@/shared/ui';
 import { A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -28,9 +28,9 @@ const Gallery: FC<GalleryProps> = ({title}) => {
 
   return (
     <div className={classes.gallery}>
-      <p className={classes.gallery__title}>
+      <TextSlice size={'extra_small'} align={'center'}>
         {title}
-      </p>
+      </TextSlice>
 
       {isImagesLoading &&
         <Loader />

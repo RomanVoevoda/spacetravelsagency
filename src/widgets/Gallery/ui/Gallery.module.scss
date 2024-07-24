@@ -14,14 +14,8 @@
     max-width: 80%;
   }
 
-  &__title {
-    color: var(--secondary-font-color);
-    font-size: $extra-small-font-size;
-    padding-bottom: 1rem;
-    text-align: center;
-  }
-
   &__track {
+    margin-top: 1rem;
     position: relative !important;
     width: 100% !important;
     height: 100% !important;

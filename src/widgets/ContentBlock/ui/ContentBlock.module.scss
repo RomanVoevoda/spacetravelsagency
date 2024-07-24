@@ -21,9 +21,7 @@
       height: 15rem;
       width: 100%;
       border-radius: 1rem;
-      border-color: var(--border-color);
-      border-style: solid;
-      border-width: 0.2rem;
+      border: 0.2rem solid var(--border-color);
       overflow: hidden;
 
       @media screen and (width >= 600px) {

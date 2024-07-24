@@ -1,10 +1,8 @@
 .footer {
   height: 5rem;
   width: 100%;
-  padding: 1rem 0;
   padding: 0 1rem;
   position: relative;
-  bottom: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -41,7 +39,6 @@
     justify-content: center;
     align-items: flex-start;
     font-size: $extra-small-font-size;
-    color: var(--secondary-font-color);
   }
 
   &__paragraph {

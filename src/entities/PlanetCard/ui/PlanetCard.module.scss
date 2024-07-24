@@ -26,9 +26,7 @@
     margin: 0.5rem;
     overflow: hidden;
     border-radius: 1rem;
-    border-style: solid;
-    border-color: var(--border-color);
-    border-width: 0.2rem;
+    border: 0.2rem solid var(--border-color);
     max-height: 20rem;
   }
 

@@ -4,9 +4,7 @@
   width: 4rem;
   height: 1.5rem;
   border-radius: 0.8rem;
-  border-width: 0.2rem;
-  border-style: solid;
-  border-color: var(--border-color);
+  border: 0.2rem solid var(--border-color);
   background-color: var(--button-color-hover);
   box-shadow: 0 0 0.2rem 0 var(--border-color) inset;
   z-index: 10;
