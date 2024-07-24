@@ -24,11 +24,23 @@ export default class ApiService {
     }
   }
 
-  public static async fetchExoplanets(callback: React.Dispatch<React.SetStateAction<any>>) {
+  public static async fetchExoplanets(
+    callback: React.Dispatch<React.SetStateAction<any>>,
+    setTotalPages: React.Dispatch<React.SetStateAction<any>>,
+    page: number,
+    limit: number
+  ) {
     try {
-      const response = await axios.get('https://api.jikan.moe/v4/anime');
+      const response = await axios.get('https://api.jikan.moe/v4/anime', {
+        params: {
+          page: page,
+          limit: limit
+        }
+      });
 
+      console.log(response.data.pagination.last_visible_page)
       callback(response.data.data);
+      setTotalPages(response.data.pagination.last_visible_page)
     } catch(e) {
       throw new Error()
     }

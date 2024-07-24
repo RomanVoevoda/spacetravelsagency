@@ -1,0 +1,35 @@
+.pagination {
+  &__button {
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: var(--button-font-color);
+    background-color: var(--button-color);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    @media(hover: hover) {
+      &:hover {
+        cursor: pointer;
+        color: var(--button-font-color-hover);
+        background-color: var(--button-color-hover);
+      }
+    }
+
+    @media(hover:none) {
+      &:active {
+        color: var(--button-font-color-hover);
+        background-color: var(--button-color-hover);
+      }
+    }
+
+    &_active {
+      color: var(--button-font-color-hover);
+      background-color: var(--button-color-active);
+    }
+  }
+}

@@ -23,4 +23,12 @@
       grid-template-columns: auto auto auto auto auto auto;
     }
   }
+
+  &__pagination_container {
+    background: var(--main-background-color);
+    margin: 1rem 2rem;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
 }

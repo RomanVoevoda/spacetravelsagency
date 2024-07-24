@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import classes from './Exoplanets.module.scss';
 import { FlexDiv, Loader, Modal, TextSlice } from '@/shared/ui';
-import { useBlockBuilder } from '@/widgets';
+import { Pagination, useBlockBuilder } from '@/widgets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faSort } from '@fortawesome/free-solid-svg-icons';
 import { useFetching } from '@/shared/lib';
@@ -20,16 +20,19 @@ const Exoplanets: FC = () => {
   builder.clearRefs();
 
   const [planets, setPlanets] = useState<PlanetData[]>([]);
+  const [limit, setLimit] = useState(25);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
   
   const [fetchPlanets, isLoading, isError] = useFetching( async () => {
-    await ApiService.fetchExoplanets(setPlanets);
+    await ApiService.fetchExoplanets(setPlanets, setTotalPages, page, limit);
   });
 
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchPlanets();
-  }, [])
+  }, [page, limit])
 
   return (
     <FlexDiv align={'align_center'} direction={'column'}>
@@ -72,6 +75,14 @@ const Exoplanets: FC = () => {
             />
           ))    
         }
+      </div>
+
+      <div className={classes.exoplanets__pagination_container}>
+        <Pagination 
+          pagesCount={totalPages} 
+          currentPage={page} 
+          changePage={(page) => setPage(page)}
+        />
       </div>
     </FlexDiv>
   );
