@@ -21,8 +21,12 @@ const Pagination: FC<PaginationProps> = ({pagesCount, currentPage, changePage}) 
     <div className={classes.pagination}>
       {currentPage > 3 &&
         <button
-          onClick={() => changePage(1)}
+          onClick={() => {
+            changePage(1);
+            localStorage.setItem('page', String(1))
+          }}
           className={classes.pagination__button}
+          value={1}
         >
           <TextSlice size={'extra_small'} font={'rubik'}>
             {1}
@@ -39,7 +43,11 @@ const Pagination: FC<PaginationProps> = ({pagesCount, currentPage, changePage}) 
         ?
         <button
           key={p}
-          onClick={() => changePage(p)}
+          value={p}
+          onClick={() => {
+            changePage(p);
+            localStorage.setItem('page', String(p))
+          }}
           className={
             p !== currentPage 
             ? 
@@ -66,8 +74,12 @@ const Pagination: FC<PaginationProps> = ({pagesCount, currentPage, changePage}) 
 
       {currentPage < pagesCount - 2 &&
         <button
-          onClick={() => changePage(pagesCount)}
+          onClick={() => {
+            changePage(pagesCount);
+            localStorage.setItem('page', String(pagesCount));
+          }}
           className={classes.pagination__button}
+          value={pagesCount}
         >
           <TextSlice size={'extra_small'} font={'rubik'}>
             {pagesCount}

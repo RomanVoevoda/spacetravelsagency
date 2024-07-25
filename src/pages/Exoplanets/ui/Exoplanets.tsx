@@ -17,9 +17,13 @@ const Exoplanets: FC = () => {
   const content = builder.build();
   builder.clearRefs();
 
+  
+  let baseLimit = localStorage.getItem('limit') ? Number( localStorage.getItem('limit') ) : 25;
+  let basePage = localStorage.getItem('page') ? Number( localStorage.getItem('page') ) : 1;
+
   const [planets, setPlanets] = useState<PlanetData[]>([]);
-  const [limit, setLimit] = useState(25);
-  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(baseLimit);
+  const [page, setPage] = useState(basePage);
   const [totalPages, setTotalPages] = useState(0);
   
   const [fetchPlanets, isLoading, isError] = useFetching( async () => {
@@ -30,7 +34,7 @@ const Exoplanets: FC = () => {
 
   useEffect(() => {
     fetchPlanets();
-  }, [page, limit])
+  }, [limit, page])
 
   return (
     <FlexDiv align={'align_center'} direction={'column'}>
@@ -61,13 +65,19 @@ const Exoplanets: FC = () => {
             value={limit}
             size={1} 
             options={[5, 10, 25]}
-            onChange={(e) => setLimit( Number(e.target.value) )}
+            onChange={(e) => {
+              setLimit( Number(e.target.value) );
+              setPage(1);
+
+              localStorage.setItem('limit', e.target.value);
+              localStorage.setItem('page', '1');
+            }}
           />      
       </div>
 
       <div className={classes.exoplanets__cards_container}>
         {isError &&
-          <TextSlice size={'normal'}>
+          <TextSlice size={'normal'} align={'center'}>
             Проиошла ошибка загрузки планет.
           </TextSlice>
         }
@@ -89,7 +99,9 @@ const Exoplanets: FC = () => {
         <Pagination 
           pagesCount={totalPages} 
           currentPage={page} 
-          changePage={(page) => setPage(page)}
+          changePage={(page) => {
+            setPage(page);
+          }}
         />
       </div>
     </FlexDiv>
