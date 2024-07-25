@@ -1,9 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import classes from './Exoplanets.module.scss';
-import { FlexDiv, Loader, Modal, TextSlice } from '@/shared/ui';
+import { FlexDiv, Loader, Modal, Select, TextSlice } from '@/shared/ui';
 import { Pagination, useBlockBuilder } from '@/widgets';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faSort } from '@fortawesome/free-solid-svg-icons';
 import { useFetching } from '@/shared/lib';
 import { ApiService } from '@/shared/api';
 import { PlanetCard } from '@/entities';
@@ -44,17 +42,27 @@ const Exoplanets: FC = () => {
 
       {content}
 
-      <div className={classes.exoplanets__buttons_container}>
-        <button>
-          <FontAwesomeIcon icon={faSort} />
-          Сортировка по:
-        </button>
-        
-        <button>
-          <FontAwesomeIcon icon={faCaretDown} />
-          На странице:
-        </button>
-        
+      <div className={classes.exoplanets__options_container}>
+          <TextSlice size={'extra_small'}>
+            Сортировка по:
+          </TextSlice>
+
+          <Select
+            value={'дате выхода'}
+            size={1} 
+            options={['имени', 'рейтингу', 'дате выхода']}
+          />
+
+          <TextSlice size={'extra_small'}>
+            На странице:
+          </TextSlice>
+
+          <Select
+            value={limit}
+            size={1} 
+            options={[5, 10, 25]}
+            onChange={(e) => setLimit( Number(e.target.value) )}
+          />      
       </div>
 
       <div className={classes.exoplanets__cards_container}>
@@ -70,7 +78,7 @@ const Exoplanets: FC = () => {
               title={planet.title} 
               image_src={planet.images?.webp?.image_url}
               score={planet.score}
-              key={planet.mal_id}
+              key={planet.mal_id + planet.title}
               onClick={() => transitToPlanet(navigate, planet.mal_id)}
             />
           ))    

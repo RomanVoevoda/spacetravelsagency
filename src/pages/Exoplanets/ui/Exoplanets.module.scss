@@ -1,6 +1,14 @@
 .exoplanets {
-  &__buttons_container {
-
+  &__options_container {
+    margin: 1rem 2rem;
+    padding: 1rem;
+    align-self: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.5;
+    background-color: var(--main-background-color);
+    border-radius: 1rem;
   }
 
   &__cards_container {

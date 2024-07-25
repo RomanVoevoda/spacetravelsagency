@@ -1,0 +1,26 @@
+.select {
+  outline: none;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: var(--button-font-color);
+  background-color: var(--button-color);
+  font-family: "MartianMono";
+  font-size: $extra-small-font-size;
+  border: solid 0.2rem var(--border-color);
+  border-radius: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--button-font-color-hover);
+  }
+
+  @media(hover:none) {
+    &:active {
+      color: var(--button-font-color-hover);
+    }
+  } 
+
+  &__option {
+    @extend .select;
+  }
+}
