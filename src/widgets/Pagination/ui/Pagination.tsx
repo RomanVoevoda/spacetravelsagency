@@ -18,7 +18,7 @@ const Pagination: FC<PaginationProps> = ({pagesCount, currentPage, changePage}) 
   ]
 
   return (
-    <FlexDiv align={'align_end'} justify={'justify_center'}>
+    <div className={classes.pagination}>
       {currentPage > 3 &&
         <button
           onClick={() => changePage(1)}
@@ -74,7 +74,7 @@ const Pagination: FC<PaginationProps> = ({pagesCount, currentPage, changePage}) 
           </TextSlice>
         </button>
       }
-    </FlexDiv>
+    </div>
   );
 };
 

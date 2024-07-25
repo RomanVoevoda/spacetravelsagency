@@ -34,11 +34,11 @@ export default class ApiService {
       const response = await axios.get('https://api.jikan.moe/v4/anime', {
         params: {
           page: page,
-          limit: limit
-        }
+          limit: limit,
+          sfw: true
+        },
       });
 
-      console.log(response.data.pagination.last_visible_page)
       callback(response.data.data);
       setTotalPages(response.data.pagination.last_visible_page)
     } catch(e) {

@@ -15,13 +15,7 @@ const Header: FC<HeaderProps> = ({openNavbar}) => {
 
     ?
 
-    <header className={
-      classes.header
-      +
-      ' '
-      +
-      classes.header_mobile
-    }>
+    <header className={classes.header}>
       <FlexDiv align='align_center'>
         <FontAwesomeIcon 
           icon={faBars} 

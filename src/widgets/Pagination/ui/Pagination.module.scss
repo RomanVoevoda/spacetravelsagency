@@ -1,4 +1,10 @@
 .pagination {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  flex-flow: row wrap;
+
   &__button {
     outline: none;
     border: none;

@@ -51,6 +51,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.34.3",
     "globals": "^15.8.0",
+    "qs": "^6.12.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",

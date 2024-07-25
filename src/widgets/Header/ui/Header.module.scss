@@ -8,9 +8,9 @@
   align-items: center;
   background-color: var(--main-background-color);
 
-  &_mobile {
-    position: -webkit-sticky !important;
-    position: sticky !important;
+  @media screen and (width < 600px) {
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
     z-index: $sticky-index;
   }
@@ -33,7 +33,7 @@
 
   &__icon {
     color: var(--button-color);
-    padding-right: 2rem;
+    padding-right: 1.5rem;
     font-size: $normal-font-size;
 
     @media(hover:hover) {

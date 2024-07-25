@@ -20,7 +20,7 @@ const MainImage: FC = () =>  {
   
   return (
     <div className={classes.mainImage}>   
-      {isImageLoading &&
+      {!data && isImageLoading &&
         <Loader />
       }
 
