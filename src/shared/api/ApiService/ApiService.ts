@@ -28,13 +28,15 @@ export default class ApiService {
     callback: React.Dispatch<React.SetStateAction<any>>,
     setTotalPages: React.Dispatch<React.SetStateAction<any>>,
     page: number,
-    limit: number
+    limit: number,
+    sortMethod: string
   ) {
     try {
       const response = await axios.get('https://api.jikan.moe/v4/anime', {
         params: {
           page: page,
           limit: limit,
+          order_by: sortMethod,
           sfw: true
         },
       });

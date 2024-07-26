@@ -2,12 +2,13 @@ import { FC, useEffect, useState } from 'react';
 import classes from './Exoplanets.module.scss';
 import { FlexDiv, Loader, Modal, Select, TextSlice } from '@/shared/ui';
 import { Pagination, useBlockBuilder } from '@/widgets';
-import { useFetching } from '@/shared/lib';
+import { findKeyByValue, useFetching } from '@/shared/lib';
 import { ApiService } from '@/shared/api';
 import { PlanetCard } from '@/entities';
 import { PlanetData } from '@/shared/api'; 
 import { useNavigate } from 'react-router-dom';
 import { transitToPlanet } from '../lib/helpers/transitToPlanet';
+import { sortMethods } from '../consts/sortMethods';
 
 const Exoplanets: FC = () => {
   const builder = useBlockBuilder()
@@ -20,21 +21,23 @@ const Exoplanets: FC = () => {
   
   let baseLimit = localStorage.getItem('limit') ? Number( localStorage.getItem('limit') ) : 25;
   let basePage = localStorage.getItem('page') ? Number( localStorage.getItem('page') ) : 1;
+  let baseSortMethod = localStorage.getItem('sort') ? String( localStorage.getItem('sort') ) : 'mal_id';
 
   const [planets, setPlanets] = useState<PlanetData[]>([]);
   const [limit, setLimit] = useState(baseLimit);
   const [page, setPage] = useState(basePage);
   const [totalPages, setTotalPages] = useState(0);
+  const [sortMethod, setSortMethod] = useState(baseSortMethod);
   
   const [fetchPlanets, isLoading, isError] = useFetching( async () => {
-    await ApiService.fetchExoplanets(setPlanets, setTotalPages, page, limit);
+    await ApiService.fetchExoplanets(setPlanets, setTotalPages, page, limit, sortMethod);
   });
 
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchPlanets();
-  }, [limit, page])
+  }, [limit, page, sortMethod])
 
   return (
     <FlexDiv align={'align_center'} direction={'column'}>
@@ -52,9 +55,22 @@ const Exoplanets: FC = () => {
           </TextSlice>
 
           <Select
-            value={'дате выхода'}
+            value={findKeyByValue(sortMethods, sortMethod)}
             size={1} 
-            options={['имени', 'рейтингу', 'дате выхода']}
+            options={[
+              'id', 
+              'имени', 
+              'рейтингу', 
+              'самые новые', 
+              'самые старые',
+              'эпизодам',
+              'популярности'
+            ]}
+            onChange={(e) => {
+              setSortMethod( sortMethods[e.target.value] )
+
+              localStorage.setItem('sort', sortMethods[e.target.value]);
+            }}
           />
 
           <TextSlice size={'extra_small'}>
