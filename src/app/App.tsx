@@ -1,20 +1,21 @@
 import { FC, useState  } from 'react';
-import classes from './App.module.scss';
+import appClasses from './App.module.scss';
 import { AppRouter } from './router';
 import { IContext, ThemeContext } from '@/shared/lib';
 
 const App: FC = () => {
-  let theme = (localStorage.getItem('theme') != 'light') ? 'dark' : 'light';
+  let theme = (localStorage.getItem('theme') != 'light') ? appClasses.dark : appClasses.light;
 
   const [colorsTheme, setColorsTheme] = useState<string>(theme);
   const context: IContext | undefined = {
     colorsTheme,
-    setColorsTheme
+    setColorsTheme,
+    appClasses
   }
 
   return (
     <ThemeContext.Provider value={context}>
-      <div className={classes.App + ' ' + colorsTheme}>
+      <div className={appClasses.App + ' ' + colorsTheme}>
         <AppRouter />
       </div>
     </ThemeContext.Provider>

@@ -1,10 +1,13 @@
-export const changeColorsTheme = (theme: string, fn: React.Dispatch<React.SetStateAction<string>>) => {
+export const changeColorsTheme = (
+  theme: string, 
+  fn: React.Dispatch<React.SetStateAction<string>>,
+  appClasses: Record<string, string>) => {
 
-  if(theme === 'dark') {
-    fn('light');
+  if(theme === appClasses.dark ) {
+    fn(appClasses.light);
     localStorage.setItem('theme', 'light');
   } else {
-    fn('dark');
+    fn(appClasses.dark);
     localStorage.setItem('theme', 'dark');
   }
 }
