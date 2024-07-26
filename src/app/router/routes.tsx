@@ -5,7 +5,6 @@ import { Navigate } from "react-router-dom";
 const Main = lazy( () => import('@/pages/Main/ui/Main'));
 const Mars = lazy( () => import('@/pages/Mars/ui/Mars'));
 const Exoplanets = lazy( () => import('@/pages/Exoplanets/ui/Exoplanets'));
-const PriceCalculator = lazy( () => import('@/pages/PriceCalculator/ui/PriceCalculator'));
 const About = lazy( () => import('@/pages/About/ui/About'));
 const ExoplanetIdPage = lazy( () => import('@/pages/ExoplanetIdPage/ui/ExoplanetIdPage'))
 
@@ -29,11 +28,6 @@ export const routes: route[]  = [
     path: routesEnum.exoplanets, 
     element: 
       <Exoplanets />
-  },
-  {
-    path: routesEnum.calculator, 
-    element: 
-      <PriceCalculator />
   },
   {
     path: routesEnum.about, 

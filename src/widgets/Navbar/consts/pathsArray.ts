@@ -9,6 +9,5 @@ export const pathsArray: pathObject[] = [
   {path: routesEnum.main, text: 'Главная'},
   {path: routesEnum.mars, text: 'Марс'},
   {path: routesEnum.exoplanets, text: 'Экзопланеты'},
-  {path: routesEnum.calculator, text: 'Калькулятор цен'},
   {path: routesEnum.about, text: 'О нас'} 
 ]
