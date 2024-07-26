@@ -1,11 +1,22 @@
+import { FlexDiv } from '@/shared/ui';
+import { useBlockBuilder } from '@/widgets';
 import { FC } from 'react';
-import classes from './About.module.scss';
 
 const About: FC = () => {
-  return (
-    <div className={classes.about}>
+  const builders = [
+    useBlockBuilder()
+      .setHeader('О нас')
+      .setImage('https://i.imgur.com/4CoFnlO.png', 'космическая станция', 'Околоземная станция')
+      .setText(`Наша невероятная компания бля-бла-бла, и так далее...`)
+  ]
 
-    </div>
+  const content = builders.map(builder => builder.build());
+  builders.forEach(builder => builder.clearRefs());
+
+  return (
+    <FlexDiv direction={'column'} align={'align_center'}>
+      {...content}
+    </FlexDiv>
   );
 };
 
