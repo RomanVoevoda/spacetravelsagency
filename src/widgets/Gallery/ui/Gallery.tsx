@@ -6,8 +6,6 @@ import { GalleryImage, TextSlice } from '@/shared/ui';
 import { A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/scss';
-import 'swiper/scss/a11y';
 import { SwiperButton, Loader } from '@/shared/ui';
 import { useFetching } from '@/shared/lib';
 
