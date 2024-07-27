@@ -32,7 +32,7 @@ const Gallery: FC<GalleryProps> = ({title}) => {
         {title}
       </TextSlice>
 
-      {isImagesLoading &&
+      {isImagesLoading && images.length < 24 &&
         <Loader />
       }
 
@@ -47,11 +47,10 @@ const Gallery: FC<GalleryProps> = ({title}) => {
           className={classes.gallery__track}
           modules={[A11y]}
           spaceBetween={0}
-          slidesPerView={1}
           slidesPerGroup={1}
+          slidesPerView={1}
           scrollbar={{ draggable: true }}
           loop={true}
-          zoom={true}
           speed={100}
         >
 

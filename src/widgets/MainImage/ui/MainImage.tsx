@@ -20,13 +20,13 @@ const MainImage: FC = () =>  {
   
   return (
     <div className={classes.mainImage}>   
-      {!data && isImageLoading &&
+      {!data && isImageLoading && 
         <Loader />
       }
 
       <GalleryImage
         src={
-          (data && data.hdurl) 
+          (data && data.media_type === 'image') 
           ? 
           data.hdurl 
           : 
