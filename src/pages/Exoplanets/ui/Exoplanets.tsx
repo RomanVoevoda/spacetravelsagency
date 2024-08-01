@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import classes from './Exoplanets.module.scss';
 import { FlexDiv, Loader, Modal, Select, TextSlice } from '@/shared/ui';
 import { Pagination, useBlockBuilder } from '@/widgets';
-import { findKeyByValue, useFetching } from '@/shared/lib';
+import { filterArrayFromCopies, findKeyByValue, useFetching } from '@/shared/lib';
 import { ApiService } from '@/shared/api';
 import { PlanetCard } from '@/entities';
 import { PlanetData } from '@/shared/api'; 
@@ -99,7 +99,7 @@ const Exoplanets: FC = () => {
         }
 
         {planets.length > 0 &&
-          planets.map(planet => (
+          filterArrayFromCopies(planets, 'mal_id').map(planet => (
             <PlanetCard 
               title={planet.title} 
               image_src={planet.images?.webp?.image_url}

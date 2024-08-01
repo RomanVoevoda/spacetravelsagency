@@ -1,13 +1,14 @@
-import { FC, useEffect, useState } from 'react';
 import classes from './Gallery.module.scss';
+
+import { FC, useEffect, useState } from 'react';
 import { apiKey, ApiService } from '@/shared/api';
 import { imageData } from '../types/types';
 import { GalleryImage, TextSlice } from '@/shared/ui';
+import { useFetching } from '@/shared/lib';
+
 import { A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { SwiperButton, Loader } from '@/shared/ui';
-import { useFetching } from '@/shared/lib';
 
 interface GalleryProps {
   title: string
