@@ -16,4 +16,4 @@ declare module "*.svg" {
   export default SVG;
 }
 
-declare module 'eslint-plugin-react/configs/recommended';
+declare module 'eslint-plugin-react';
